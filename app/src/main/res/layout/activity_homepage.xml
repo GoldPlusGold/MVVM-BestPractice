@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".business.homepage.activity.HomePageActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.goldplusgold.mvvm_practice.business.homepage.activity.HomePageViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/articleButton0"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="@{(tag) -> viewModel.setCurrentFragmentByIndex(0)}"
+                android:text="article0" />
+
+
+            <Button
+                android:id="@+id/articleButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="@{(tag) -> viewModel.setCurrentFragmentByIndex(1)}"
+                android:text="article1" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/containerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabLayout">
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="twdbViewModel"
+            type="com.example.goldplusgold.mvvm_practice.business.twowaydatabinding.TWDBViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:textAlignment="center">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightBlue"
+            android:padding="10dp"
+            android:hint="age"
+            android:textAlignment="center"
+            android:text="@={`` + twdbViewModel.age}"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightBlue"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:hint="name"
+            android:textAlignment="center"
+            android:text="@={twdbViewModel.name}"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否已婚"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={twdbViewModel.isMarried}"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightBlue"
+            android:onClick="@{() -> twdbViewModel.submit()}"
+            android:text="submit"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightBlue"
+            android:layout_marginTop="10dp"
+            android:onClick="@{() -> twdbViewModel.reset()}"
+            android:text="reset"/>
+
+    </LinearLayout>
+
+</layout>
